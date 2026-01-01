@@ -1,52 +1,66 @@
 /* General styles */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f8ff; /* Light blue background */
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 50%, #e1f5fe 100%);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 .App {
   text-align: center;
 }
 
+/* Logo styles */
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
 /* Navigation styles */
 nav {
-  background-color: #4682b4; /* Steel blue */
+  background: linear-gradient(135deg, #4682b4 0%, #5a9bd4 100%);
   padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+/* Bootstrap navbar link styling (makes tab labels always visible) */
+.navbar .navbar-brand {
+  color: #ffffff !important;
 }
 
-nav ul li {
-  margin: 0 1rem;
-}
-
-nav ul li a {
-  color: #ffffff; /* White text for visibility */
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #f0f8ff; /* Light blue */
-  text-decoration: underline;
+.navbar .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.navbar .nav-link.active {
+  color: #0b3d6e !important;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Component styles */
 h1 {
-  color: #00008b; /* Dark blue header name */
+  color: #1565c0;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Table styles */
@@ -54,31 +68,40 @@ table {
   width: 90%;
   margin: 1rem auto;
   border-collapse: collapse;
-  background-color: #ffffff; /* White background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   overflow: hidden;
 }
 
 table th, table td {
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0;
   padding: 1rem;
   text-align: left;
   font-size: 1rem;
 }
 
 table th {
-  background-color: #4682b4; /* Steel blue */
+  background: linear-gradient(135deg, #4682b4 0%, #5a9bd4 100%);
   color: white;
   font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 table tr:nth-child(even) {
-  background-color: #f0f8ff; /* Light blue */
+  background-color: #e3f2fd;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
 table tr:hover {
-  background-color: #e0ffff; /* Light cyan */
+  background-color: #bbdefb;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
 }
 
 ul {
@@ -87,36 +110,94 @@ ul {
 }
 
 ul li {
-  color: #4682b4; /* Steel blue text */
+  color: #1565c0;
   background-color: #fff;
   margin: 0.5rem 0;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+ul li:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 
 /* Text styles */
 .component-text {
-  color: #00008b; /* Dark blue center title */
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  color: #1565c0;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 /* Button styles */
-button {
-  background-color: #4682b4; /* Steel blue */
+button, .btn {
+  background: linear-gradient(135deg, #4682b4 0%, #5a9bd4 100%);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-button:hover {
-  background-color: #5a9bd4; /* Lighter steel blue */
+button:hover, .btn:hover {
+  background: linear-gradient(135deg, #5a9bd4 0%, #6ba3db 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+button:active, .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Card enhancements */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  font-weight: 600;
+  padding: 1.25rem;
+}
+
+/* Badge enhancements */
+.badge {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Alert enhancements */
+.alert {
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinner customization */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
 }
 
 .App-logo {
@@ -143,6 +224,11 @@ button:hover {
 
 .App-link {
   color: #61dafb;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #4fc3f7;
 }
 
 @keyframes App-logo-spin {
@@ -151,5 +237,24 @@ button:hover {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .component-text {
+    font-size: 1.5rem;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-logo {
+    height: 32px;
   }
 }
