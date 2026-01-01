@@ -28,11 +28,11 @@ class TeamSerializer(serializers.ModelSerializer):
 
 class ActivitySerializer(serializers.ModelSerializer):
     _id = ObjectIdField(read_only=True)
-    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    user_id = ObjectIdField(source='user._id', read_only=True)
 
     class Meta:
         model = Activity
-        fields = '__all__'
+        fields = ['_id', 'user_id', 'activity_type', 'duration']
 
 class LeaderboardSerializer(serializers.ModelSerializer):
     _id = ObjectIdField(read_only=True)
